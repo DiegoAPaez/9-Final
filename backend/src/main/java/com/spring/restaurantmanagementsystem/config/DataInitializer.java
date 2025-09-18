@@ -35,16 +35,14 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         // Create roles if they don't exist
         createRoleIfNotFound(RoleEnum.ADMIN);
         createRoleIfNotFound(RoleEnum.CASHIER);
         createRoleIfNotFound(RoleEnum.WAITER);
 
         // Check if an admin user already exists
-        boolean adminExists = userRepository.findAll().stream()
-                .anyMatch(user -> user.getRoles().stream()
-                        .anyMatch(role -> role.getName().equals(RoleEnum.ADMIN)));
+        boolean adminExists = userRepository.existsByRoles_Name(RoleEnum.ADMIN);
 
         if (!adminExists) {
             Role adminRole = roleRepository.findByName(RoleEnum.ADMIN)
