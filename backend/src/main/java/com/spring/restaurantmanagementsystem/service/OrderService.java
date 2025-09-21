@@ -82,7 +82,7 @@ public class OrderService {
         // Process order items if provided
         if (request.orderItems() != null && !request.orderItems().isEmpty()) {
             for (CreateOrderItemRequest orderItemRequest : request.orderItems()) {
-                orderItemService.createOrderItem(savedOrder.getId(), orderItemRequest);
+                orderItemService.addOrderItem(savedOrder.getId(), orderItemRequest);
             }
             // Recalculate total after adding all items
             calculateAndUpdateTotalAmount(savedOrder.getId());
@@ -117,7 +117,7 @@ public class OrderService {
 
             // Add new order items
             for (UpdateOrderItemRequest orderItemRequest : request.orderItems()) {
-                orderItemService.createOrderItem(savedOrder.getId(), orderItemRequest);
+                orderItemService.addOrderItem(savedOrder.getId(), orderItemRequest);
             }
 
             // Recalculate total after updating all items

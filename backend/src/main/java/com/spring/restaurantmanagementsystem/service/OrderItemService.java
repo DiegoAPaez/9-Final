@@ -55,36 +55,15 @@ public class OrderItemService {
     }
 
     public OrderItemDto createOrderItem(Long orderId, CreateOrderItemRequest request) {
-        Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: " + orderId));
-
-        OrderItem orderItem = new OrderItem();
-        orderItem.setOrder(order);
-        setOrderItemFields(orderItem, request.menuItemId(), request.quantity(), request.unitPrice());
-
-        OrderItem savedOrderItem = orderItemRepository.save(orderItem);
-
-        // Recalculate order total
-        updateOrderTotal(order);
-
-        return convertToDto(savedOrderItem);
+        return createOrderItemInternal(orderId, request.menuItemId(), request.quantity(), request.unitPrice());
     }
 
-    // Overloaded method to handle UpdateOrderItemRequest
-    public OrderItemDto createOrderItem(Long orderId, UpdateOrderItemRequest request) {
-        Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: " + orderId));
+    public void addOrderItem(Long orderId, CreateOrderItemRequest request) {
+        createOrderItemInternal(orderId, request.menuItemId(), request.quantity(), request.unitPrice());
+    }
 
-        OrderItem orderItem = new OrderItem();
-        orderItem.setOrder(order);
-        setOrderItemFields(orderItem, request.menuItemId(), request.quantity(), request.unitPrice());
-
-        OrderItem savedOrderItem = orderItemRepository.save(orderItem);
-
-        // Recalculate order total
-        updateOrderTotal(order);
-
-        return convertToDto(savedOrderItem);
+    public void addOrderItem(Long orderId, UpdateOrderItemRequest request) {
+        createOrderItemInternal(orderId, request.menuItemId(), request.quantity(), request.unitPrice());
     }
 
     public OrderItemDto updateOrderItem(Long id, UpdateOrderItemRequest request) {
@@ -95,7 +74,6 @@ public class OrderItemService {
 
         OrderItem savedOrderItem = orderItemRepository.save(orderItem);
 
-        // Recalculate order total
         updateOrderTotal(orderItem.getOrder());
 
         return convertToDto(savedOrderItem);
@@ -147,5 +125,21 @@ public class OrderItemService {
                 orderItem.getUnitPrice(),
                 orderItem.getSubtotal()
         );
+    }
+
+    private OrderItemDto createOrderItemInternal(Long orderId, Long menuItemId, Integer quantity, BigDecimal unitPrice) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: " + orderId));
+
+        OrderItem orderItem = new OrderItem();
+        orderItem.setOrder(order);
+        setOrderItemFields(orderItem, menuItemId, quantity, unitPrice);
+
+        OrderItem savedOrderItem = orderItemRepository.save(orderItem);
+
+        // Recalculate order total
+        updateOrderTotal(order);
+
+        return convertToDto(savedOrderItem);
     }
 }
