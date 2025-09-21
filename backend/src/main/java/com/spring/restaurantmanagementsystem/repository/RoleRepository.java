@@ -1,6 +1,5 @@
 package com.spring.restaurantmanagementsystem.repository;
 
-import com.spring.restaurantmanagementsystem.enums.AllergenEnum;
 import com.spring.restaurantmanagementsystem.model.Role;
 import com.spring.restaurantmanagementsystem.enums.RoleEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
