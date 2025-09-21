@@ -12,7 +12,6 @@ import java.util.Optional;
 public interface RestaurantTableRepository extends JpaRepository<RestaurantTable, Long> {
     Optional<RestaurantTable> findByNumber(Integer number);
     List<RestaurantTable> findByTableState(TableStateEnum tableState);
-    List<RestaurantTable> findByCurrentOrderId(Long currentOrderId);
     boolean existsByNumber(Integer number);
     boolean existsByNumberAndIdNot(Integer number, Long id);
 }
