@@ -134,6 +134,10 @@ public class SecurityConfig {
                         // Authenticated endpoints - require valid JWT
                         .requestMatchers("/api/auth/logout").authenticated()
                         .requestMatchers("/api/auth/me").authenticated()
+                        .requestMatchers("/api/tables/**").authenticated()
+                        .requestMatchers("/api/orders/**").authenticated()
+                        .requestMatchers("/api/order-items/**").authenticated()
+                        .requestMatchers("/api/cashier/**").hasRole("CASHIER")
 
                         // Admin-only endpoints
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
