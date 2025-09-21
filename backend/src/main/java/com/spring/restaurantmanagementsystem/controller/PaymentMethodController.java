@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.controller;
 
-import com.spring.restaurantmanagementsystem.dto.PaymentMethodDTO;
+import com.spring.restaurantmanagementsystem.dto.PaymentMethodDto;
 import com.spring.restaurantmanagementsystem.service.PaymentMethodService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class PaymentMethodController {
     }
 
     @GetMapping
-    public List<PaymentMethodDTO> getAllPaymentMethods() {
+    public List<PaymentMethodDto> getAllPaymentMethods() {
         return paymentMethodService.getAllPaymentMethods();
     }
 }

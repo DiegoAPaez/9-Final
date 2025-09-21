@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.controller;
 
-import com.spring.restaurantmanagementsystem.dto.OrderStateDTO;
+import com.spring.restaurantmanagementsystem.dto.OrderStateDto;
 import com.spring.restaurantmanagementsystem.service.OrderStateService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class OrderStateController {
     }
 
     @GetMapping
-    public List<OrderStateDTO> getAllOrderStates() {
+    public List<OrderStateDto> getAllOrderStates() {
         return orderStateService.getAllOrderStates();
     }
 }

@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.controller;
 
-import com.spring.restaurantmanagementsystem.dto.TableStateDTO;
+import com.spring.restaurantmanagementsystem.dto.TableStateDto;
 import com.spring.restaurantmanagementsystem.service.TableStateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,7 +18,7 @@ public class TableStateController {
     private TableStateService tableStateService;
 
     @GetMapping
-    public List<TableStateDTO> getAllTableStates() {
+    public List<TableStateDto> getAllTableStates() {
         return tableStateService.getAllTableStates();
     }
 }

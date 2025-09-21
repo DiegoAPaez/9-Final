@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.service;
 
-import com.spring.restaurantmanagementsystem.dto.PaymentMethodDTO;
+import com.spring.restaurantmanagementsystem.dto.PaymentMethodDto;
 import com.spring.restaurantmanagementsystem.repository.PaymentMethodRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +15,9 @@ public class PaymentMethodService {
         this.paymentMethodRepository = paymentMethodRepository;
     }
 
-    public List<PaymentMethodDTO> getAllPaymentMethods() {
+    public List<PaymentMethodDto> getAllPaymentMethods() {
         return paymentMethodRepository.findAll().stream()
-                .map(method -> new PaymentMethodDTO(
+                .map(method -> new PaymentMethodDto(
                         method.getName().name()
                 ))
                 .collect(Collectors.toList());

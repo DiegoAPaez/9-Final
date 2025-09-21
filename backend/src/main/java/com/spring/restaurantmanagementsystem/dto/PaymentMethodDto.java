@@ -1,4 +1,4 @@
 package com.spring.restaurantmanagementsystem.dto;
 
-public record TableStateDTO(String value) {
+public record PaymentMethodDto(String value) {
 }

@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.service;
 
-import com.spring.restaurantmanagementsystem.dto.OrderStateDTO;
+import com.spring.restaurantmanagementsystem.dto.OrderStateDto;
 import com.spring.restaurantmanagementsystem.repository.OrderStateRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +15,9 @@ public class OrderStateService {
         this.orderStateRepository = orderStateRepository;
     }
 
-    public List<OrderStateDTO> getAllOrderStates() {
+    public List<OrderStateDto> getAllOrderStates() {
         return orderStateRepository.findAll().stream()
-                .map(orderState -> new OrderStateDTO(
+                .map(orderState -> new OrderStateDto(
                         orderState.getName().name()
                 ))
                 .collect(Collectors.toList());
