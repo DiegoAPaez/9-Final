@@ -1,20 +1,20 @@
 package com.spring.restaurantmanagementsystem.model;
 
-import com.spring.restaurantmanagementsystem.enums.RoleEnum;
+import com.spring.restaurantmanagementsystem.enums.PaymentMethodEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "payment_method")
 @Getter @Setter @NoArgsConstructor
-public class Role {
+public class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 20, unique = true, nullable = false)
-    private RoleEnum name;
+    @Column(name = "name", nullable = false, unique = true)
+    private PaymentMethodEnum name;
 }

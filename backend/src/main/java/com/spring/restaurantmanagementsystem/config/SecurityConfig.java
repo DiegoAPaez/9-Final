@@ -124,9 +124,25 @@ public class SecurityConfig {
                         .ignoringRequestMatchers("/api/auth/login", "/api/auth/logout", "/api/admin/**"))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+                        // Public endpoints - no authentication required
                         .requestMatchers("/api/auth/login").permitAll()
-                        .requestMatchers("/api/auth/logout", "/api/auth/me").authenticated()
+                        .requestMatchers("/api/menu-items/**").permitAll()
+                        .requestMatchers("/api/categories").permitAll()
+                        .requestMatchers("/api/allergens").permitAll()
+                        .requestMatchers("/api/payment-statuses").permitAll()
+
+                        // Authenticated endpoints - require valid JWT
+                        .requestMatchers("/api/auth/logout").authenticated()
+                        .requestMatchers("/api/auth/me").authenticated()
+                        .requestMatchers("/api/tables/**").authenticated()
+                        .requestMatchers("/api/orders/**").authenticated()
+                        .requestMatchers("/api/order-items/**").authenticated()
+                        .requestMatchers("/api/cashier/**").hasRole("CASHIER")
+
+                        // Admin-only endpoints
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+                        // All other requests require authentication
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())

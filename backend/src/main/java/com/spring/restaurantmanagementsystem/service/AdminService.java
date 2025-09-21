@@ -6,7 +6,7 @@ import com.spring.restaurantmanagementsystem.dto.UpdateUserRequest;
 import com.spring.restaurantmanagementsystem.dto.UserDto;
 import com.spring.restaurantmanagementsystem.exception.ResourceNotFoundException;
 import com.spring.restaurantmanagementsystem.model.Role;
-import com.spring.restaurantmanagementsystem.model.RoleEnum;
+import com.spring.restaurantmanagementsystem.enums.RoleEnum;
 import com.spring.restaurantmanagementsystem.model.User;
 import com.spring.restaurantmanagementsystem.repository.RoleRepository;
 import com.spring.restaurantmanagementsystem.repository.UserRepository;
