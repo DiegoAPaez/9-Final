@@ -1,6 +1,6 @@
 package com.spring.restaurantmanagementsystem.repository;
 
-import com.spring.restaurantmanagementsystem.model.RoleEnum;
+import com.spring.restaurantmanagementsystem.enums.RoleEnum;
 import com.spring.restaurantmanagementsystem.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

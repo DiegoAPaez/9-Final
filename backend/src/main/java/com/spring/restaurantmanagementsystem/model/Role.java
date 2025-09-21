@@ -1,5 +1,6 @@
 package com.spring.restaurantmanagementsystem.model;
 
+import com.spring.restaurantmanagementsystem.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

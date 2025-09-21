@@ -1,4 +1,4 @@
-package com.spring.restaurantmanagementsystem.model;
+package com.spring.restaurantmanagementsystem.enums;
 
 public enum RoleEnum {
     ADMIN,
