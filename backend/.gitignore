@@ -33,3 +33,20 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Docker ###
+Dockerfile
+docker-compose.yml
+# Docker volumes and data
+docker-data/
+docker-volumes/
+# Docker logs
+logs/
+*.log
+# Docker environment files (if using docker-specific env files)
+.env.docker
+.env.production
+.env.local
+# Docker build context files that shouldn't be versioned
+.dockerignore
+# Don't ignore Dockerfile and docker-compose.yml as they are needed for the project
