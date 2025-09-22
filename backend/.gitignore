@@ -1,0 +1,52 @@
+HELP.md
+TODO.md
+application.properties
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Docker ###
+Dockerfile
+docker-compose.yml
+# Docker volumes and data
+docker-data/
+docker-volumes/
+# Docker logs
+logs/
+*.log
+# Docker environment files (if using docker-specific env files)
+.env.docker
+.env.production
+.env.local
+# Docker build context files that shouldn't be versioned
+.dockerignore
+# Don't ignore Dockerfile and docker-compose.yml as they are needed for the project
