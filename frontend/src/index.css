@@ -60,11 +60,6 @@
     --color-table-reserved: var(--color-info-500);
     --color-table-maintenance: var(--color-error-500);
 
-    --color-order-pending: var(--color-warning-500);
-    --color-order-preparing: var(--color-info-500);
-    --color-order-ready: var(--color-success-500);
-    --color-order-served: var(--color-primary-400);
-
     /* Enhanced semantic mappings for TailwindCSS v4 */
 
     /* Background variations */
@@ -187,8 +182,3 @@
 .table-status-occupied { color: var(--color-table-occupied); }
 .table-status-reserved { color: var(--color-table-reserved); }
 .table-status-maintenance { color: var(--color-table-maintenance); }
-
-.order-status-pending { color: var(--color-order-pending); }
-.order-status-preparing { color: var(--color-order-preparing); }
-.order-status-ready { color: var(--color-order-ready); }
-.order-status-served { color: var(--color-order-served); }
