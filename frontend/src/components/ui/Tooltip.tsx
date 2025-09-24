@@ -22,26 +22,27 @@ const Tooltip: React.FC<TooltipProps> = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [actualPosition, setActualPosition] = useState(position);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<number | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
   const showTooltip = () => {
     if (disabled || !content) return;
 
-    if (timeoutRef.current) {
+    if (timeoutRef.current !== null) {
       clearTimeout(timeoutRef.current);
     }
 
-    timeoutRef.current = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setIsVisible(true);
       updatePosition();
     }, delay);
   };
 
   const hideTooltip = () => {
-    if (timeoutRef.current) {
+    if (timeoutRef.current !== null) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
     setIsVisible(false);
   };
@@ -85,7 +86,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) {
+      if (timeoutRef.current !== null) {
         clearTimeout(timeoutRef.current);
       }
     };
@@ -141,17 +142,18 @@ const Tooltip: React.FC<TooltipProps> = ({
   );
 
   const triggerElement = React.cloneElement(children, {
-    ref: triggerRef,
     onMouseEnter: showTooltip,
     onMouseLeave: hideTooltip,
     onFocus: showTooltip,
     onBlur: hideTooltip,
     'aria-describedby': isVisible ? 'tooltip' : undefined,
-  });
+  } as never);
 
   return (
     <div className="relative inline-block">
-      {triggerElement}
+      <div ref={triggerRef}>
+        {triggerElement}
+      </div>
       <div
         ref={tooltipRef}
         className={tooltipClasses}
