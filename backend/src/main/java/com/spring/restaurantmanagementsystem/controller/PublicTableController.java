@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tables")
-@CrossOrigin(origins = "*")
 public class PublicTableController {
     private final RestaurantTableService restaurantTableService;
 

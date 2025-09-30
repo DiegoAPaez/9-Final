@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cashier/payments")
-@CrossOrigin(origins = "*")
 @PreAuthorize("hasRole('CASHIER')")
 public class CashierPaymentController {
     private final PaymentService paymentService;
