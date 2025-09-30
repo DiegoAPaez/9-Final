@@ -27,19 +27,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           // Color variants
           {
             // Primary button - main actions
-            'bg-button-primary text-text-inverse hover:bg-button-primary-hover focus:ring-primary-500 disabled:bg-primary-300 disabled:text-primary-100':
+            'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-200 dark:focus:ring-primary-400 disabled:bg-primary-300 dark:disabled:bg-primary-700 disabled:text-primary-100 dark:disabled:text-primary-400':
               variant === 'primary',
 
             // Secondary button - secondary actions
-            'bg-button-secondary text-text border border-border hover:bg-button-secondary-hover focus:ring-primary-500 disabled:bg-background-muted disabled:text-text-muted':
+            'bg-primary-100 dark:bg-primary-700 text-primary-700 dark:text-primary-100 border border-primary-200 dark:border-primary-200 hover:bg-primary-200 dark:hover:bg-primary-600 hover:text-primary-800 dark:hover:text-primary-50 focus:ring-primary-200 dark:focus:ring-primary-400 disabled:bg-primary-100 dark:disabled:bg-primary-800 disabled:text-primary-400 dark:disabled:text-primary-500':
               variant === 'secondary',
 
             // Danger button - destructive actions
-            'bg-error-500 text-white hover:bg-error-600 focus:ring-error-500 disabled:bg-error-300 disabled:text-error-100':
+            'bg-error-500 text-white hover:bg-error-600 focus:ring-error-200 dark:focus:ring-error-400 disabled:bg-error-300 dark:disabled:bg-error-700 disabled:text-error-100 dark:disabled:text-error-400':
               variant === 'danger',
 
             // Ghost button - minimal actions
-            'text-text-secondary hover:bg-background-secondary hover:text-text focus:ring-primary-500 disabled:text-text-muted':
+            'text-primary-500 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-700 hover:text-primary-700 dark:hover:text-primary-100 focus:ring-primary-200 dark:focus:ring-primary-400 disabled:text-primary-400 dark:disabled:text-primary-500':
               variant === 'ghost',
           },
 

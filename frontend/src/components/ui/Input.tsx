@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-text mb-1"
+            className="block text-sm font-medium text-primary-700 dark:text-primary-100 mb-1"
           >
             {label}
           </label>
@@ -28,7 +28,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <div className="relative">
           {startIcon && (
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <div className="h-5 w-5 text-text-muted">
+              <div className="h-5 w-5 text-primary-500 dark:text-primary-300">
                 {startIcon}
               </div>
             </div>
@@ -52,15 +52,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               // State styles
               {
                 // Normal state
-                'bg-input-background border-input-border text-text placeholder:text-text-muted focus:border-input-border-focus focus:ring-primary-200':
+                'bg-white dark:bg-primary-700 border-primary-200 dark:border-primary-600 text-primary-700 dark:text-primary-100 placeholder:text-primary-400 dark:placeholder:text-primary-400 focus:border-primary-500 focus:ring-primary-200 dark:focus:ring-primary-400':
                   !error,
 
                 // Error state
-                'bg-error-50 border-error-300 text-error-900 placeholder:text-error-400 focus:border-error-500 focus:ring-error-200':
+                'bg-error-50 dark:bg-error-900 border-error-300 dark:border-error-600 text-error-900 dark:text-error-100 placeholder:text-error-400 dark:placeholder:text-error-500 focus:border-error-500 focus:ring-error-200 dark:focus:ring-error-400':
                   error,
 
                 // Disabled state
-                'bg-background-muted border-border-muted text-text-muted cursor-not-allowed':
+                'bg-primary-100 dark:bg-primary-800 border-primary-200 dark:border-primary-600 text-primary-400 dark:text-primary-500 cursor-not-allowed':
                   props.disabled,
               },
 
@@ -71,8 +71,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           />
 
           {endIcon && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <div className="h-5 w-5 text-text-muted">
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+              <div className="h-5 w-5 text-primary-500 dark:text-primary-300">
                 {endIcon}
               </div>
             </div>
@@ -85,8 +85,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             className={clsx(
               'mt-1 text-xs',
               {
-                'text-error-600': error,
-                'text-text-muted': helperText && !error,
+                'text-error-600 dark:text-error-400': error,
+                'text-primary-500 dark:text-primary-300': helperText && !error,
               }
             )}
           >
