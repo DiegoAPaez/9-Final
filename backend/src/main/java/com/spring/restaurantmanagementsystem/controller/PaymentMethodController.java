@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/payment-methods")
-@CrossOrigin(origins = "*")
 public class PaymentMethodController {
     private final PaymentMethodService paymentMethodService;
 

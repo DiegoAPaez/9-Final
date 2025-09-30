@@ -12,10 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/table-states")
-@CrossOrigin(origins = "*")
 public class TableStateController {
-    @Autowired
-    private TableStateService tableStateService;
+    private final TableStateService tableStateService;
+
+    public TableStateController(TableStateService tableStateService) {
+        this.tableStateService = tableStateService;
+    }
 
     @GetMapping
     public List<TableStateDto> getAllTableStates() {
