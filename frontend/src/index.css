@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@theme {
+    /* Your original palette - maintained for brand consistency */
+    --color-palette-100: #f2f4f1;
+    --color-palette-200: #0b567b;
+    --color-palette-300: #114a67;
+    --color-palette-400: #0e3d54;
+    --color-palette-500: #0b2e40;
+
+    /* Enhanced palette for better contrast and component hierarchy */
+    --color-palette-50: #f8faf9;   /* Lighter than 100 - for subtle backgrounds */
+    --color-palette-600: #082533;  /* Darker than 500 - for high contrast text */
+    --color-palette-700: #051c26;  /* Even darker - for emphasis */
+    --color-palette-800: #031419;  /* Very dark - for maximum contrast */
+    --color-palette-900: #020d0f;  /* Nearly black - for borders/dividers */
+
+    /* Semantic color mappings for restaurant UI */
+    --color-primary-50: var(--color-palette-50);
+    --color-primary-100: var(--color-palette-100);
+    --color-primary-200: var(--color-palette-200);
+    --color-primary-300: var(--color-palette-300);
+    --color-primary-400: var(--color-palette-400);
+    --color-primary-500: var(--color-palette-500);
+    --color-primary-600: var(--color-palette-600);
+    --color-primary-700: var(--color-palette-700);
+    --color-primary-800: var(--color-palette-800);
+    --color-primary-900: var(--color-palette-900);
+
+    /* Status colors for restaurant operations */
+    --color-success-50: #f0fdf4;
+    --color-success-500: #22c55e;
+    --color-success-600: #16a34a;
+    --color-success-700: #15803d;
+
+    --color-warning-50: #fffbeb;
+    --color-warning-500: #f59e0b;
+    --color-warning-600: #d97706;
+    --color-warning-700: #b45309;
+
+    --color-error-50: #fef2f2;
+    --color-error-500: #ef4444;
+    --color-error-600: #dc2626;
+    --color-error-700: #b91c1c;
+
+    --color-info-50: #eff6ff;
+    --color-info-500: #3b82f6;
+    --color-info-600: #2563eb;
+    --color-info-700: #1d4ed8;
+}
