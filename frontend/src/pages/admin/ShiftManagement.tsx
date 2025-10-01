@@ -60,7 +60,7 @@ const ShiftManagement: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-primary-50 dark:bg-primary-950 p-6">
+    <div className="min-h-screen bg-primary-50 dark:bg-primary-900 p-6">
       <LoadingOverlay
         isVisible={actionLoading}
         text="Processing shift operation..."

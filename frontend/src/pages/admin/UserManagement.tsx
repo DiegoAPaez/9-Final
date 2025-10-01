@@ -68,14 +68,7 @@ const UserManagement: React.FC = () => {
         {/* Header */}
         <div className="space-y-4">
           {/* Back to Dashboard Button */}
-          <Button
-              variant="ghost"
-              onClick={() => navigate('/admin')}
-              className="w-fit"
-          >
-            <ArrowLeftIcon className="w-4 h-4 mr-2" />
-            Back to Dashboard
-          </Button>
+
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -84,10 +77,20 @@ const UserManagement: React.FC = () => {
                 Manage staff accounts, roles, and permissions.
               </p>
             </div>
-            <Button onClick={() => setIsCreateModalOpen(true)}>
-              <PlusIcon className="w-4 h-4 mr-2" />
-              Add User
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button
+                  variant="secondary"
+                  onClick={() => navigate('/admin')}
+                  className="w-fit"
+              >
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
+                Back to Dashboard
+              </Button>
+              <Button onClick={() => setIsCreateModalOpen(true)}>
+                <PlusIcon className="w-4 h-4 mr-2" />
+                Add User
+              </Button>
+            </div>
           </div>
         </div>
 

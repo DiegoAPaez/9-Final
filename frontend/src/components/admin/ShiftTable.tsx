@@ -153,10 +153,10 @@ const ShiftTable: React.FC<ShiftTableProps> = ({
                         Edit
                       </Button>
                       <Button
-                        variant="secondary"
+                        variant="danger"
                         size="sm"
                         onClick={() => onDeleteShift(shift)}
-                        className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+                        className="text-red-600 hover:text-white hover:bg-error-600 dark:text-red-400 dark:hover:text-red-300"
                       >
                         Delete
                       </Button>

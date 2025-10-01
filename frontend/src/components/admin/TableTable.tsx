@@ -146,7 +146,7 @@ const TableTable: React.FC<TableTableProps> = ({
                       Edit
                     </Button>
                     <Button
-                      variant="secondary"
+                      variant="danger"
                       size="sm"
                       onClick={() => onDeleteTable(table)}
                       className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
