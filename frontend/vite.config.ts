@@ -10,4 +10,15 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
   },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    emptyOutDir: true,
+  },
+  publicDir: "public",
+  server: {
+    port: 5173,
+    open: true,
+  },
 });
